@@ -1,0 +1,6 @@
+pandas
+numpy
+statsmodels
+holidays
+python-dateutil
+pyarrow

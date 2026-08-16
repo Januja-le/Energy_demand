@@ -1,0 +1,1016 @@
+{
+  "AEP_clean_processed.parquet": {
+    "source_csv": "AEP_clean_processed.csv",
+    "parquet": "AEP_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 121296,
+      "anomaly_count": 15120,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "all_regions_clean_processed.parquet": {
+    "source_csv": "all_regions_clean_processed.csv",
+    "parquet": "all_regions_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 178297,
+      "anomaly_count": 20411,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "COMED_clean_processed.parquet": {
+    "source_csv": "COMED_clean_processed.csv",
+    "parquet": "COMED_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 66505,
+      "anomaly_count": 8832,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "DAYTON_clean_processed.parquet": {
+    "source_csv": "DAYTON_clean_processed.csv",
+    "parquet": "DAYTON_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 121296,
+      "anomaly_count": 15270,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "DEOK_clean_processed.parquet": {
+    "source_csv": "DEOK_clean_processed.csv",
+    "parquet": "DEOK_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 57745,
+      "anomaly_count": 6693,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "DOM_clean_processed.parquet": {
+    "source_csv": "DOM_clean_processed.csv",
+    "parquet": "DOM_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 116208,
+      "anomaly_count": 13387,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "DUQ_clean_processed.parquet": {
+    "source_csv": "DUQ_clean_processed.csv",
+    "parquet": "DUQ_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 119089,
+      "anomaly_count": 14116,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "EKPC_clean_processed.parquet": {
+    "source_csv": "EKPC_clean_processed.csv",
+    "parquet": "EKPC_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 45336,
+      "anomaly_count": 5082,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "FE_clean_processed.parquet": {
+    "source_csv": "FE_clean_processed.csv",
+    "parquet": "FE_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 62880,
+      "anomaly_count": 0,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 1,
+        "trend_baseline": 62880,
+        "seasonal_diurnal": 62880,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 62880,
+        "residual_target": 62880,
+        "p10_lower_bound": 62880,
+        "p90_upper_bound": 62880,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "NI_clean_processed.parquet": {
+    "source_csv": "NI_clean_processed.csv",
+    "parquet": "NI_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 58463,
+      "anomaly_count": 7824,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "PJM_Load_clean_processed.parquet": {
+    "source_csv": "PJM_Load_clean_processed.csv",
+    "parquet": "PJM_Load_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 32904,
+      "anomaly_count": 4334,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "PJME_clean_processed.parquet": {
+    "source_csv": "PJME_clean_processed.csv",
+    "parquet": "PJME_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 145393,
+      "anomaly_count": 18006,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  },
+  "PJMW_clean_processed.parquet": {
+    "source_csv": "PJMW_clean_processed.csv",
+    "parquet": "PJMW_clean_processed.parquet",
+    "columns": [
+      {
+        "name": "timestamp",
+        "dtype": "datetime64[us]",
+        "description": ""
+      },
+      {
+        "name": "demand_mw",
+        "dtype": "float64",
+        "description": "Original actual load (Ground Truth)."
+      },
+      {
+        "name": "trend_baseline",
+        "dtype": "float64",
+        "description": "Long-term macro growth/decay extracted via STL."
+      },
+      {
+        "name": "seasonal_diurnal",
+        "dtype": "float64",
+        "description": "Repeating 24-hour daily load shape."
+      },
+      {
+        "name": "seasonal_annual_fourier",
+        "dtype": "float64",
+        "description": "Harmonic sine/cosine annual wave."
+      },
+      {
+        "name": "baseline_point_forecast",
+        "dtype": "float64",
+        "description": "Trend + Diurnal + Annual (statistical benchmark)."
+      },
+      {
+        "name": "residual_target",
+        "dtype": "float64",
+        "description": "Actual - baseline_point_forecast (Primary ML Target)."
+      },
+      {
+        "name": "p10_lower_bound",
+        "dtype": "float64",
+        "description": "Dynamic -1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "p90_upper_bound",
+        "dtype": "float64",
+        "description": "Dynamic +1.645\u03c3 rolling residual envelope."
+      },
+      {
+        "name": "is_anomaly_flag",
+        "dtype": "bool",
+        "description": "True if value outside p10/p90."
+      },
+      {
+        "name": "is_holiday",
+        "dtype": "int64",
+        "description": "Country/region-specific holiday indicator."
+      }
+    ],
+    "stats": {
+      "rows": 143233,
+      "anomaly_count": 16737,
+      "null_counts": {
+        "timestamp": 0,
+        "demand_mw": 0,
+        "trend_baseline": 0,
+        "seasonal_diurnal": 0,
+        "seasonal_annual_fourier": 0,
+        "baseline_point_forecast": 0,
+        "residual_target": 0,
+        "p10_lower_bound": 23,
+        "p90_upper_bound": 23,
+        "is_anomaly_flag": 0,
+        "is_holiday": 0
+      }
+    }
+  }
+}
